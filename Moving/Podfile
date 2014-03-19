@@ -1,5 +1,5 @@
 platform :ios, '7.0'
 
-pod 'ObjectiveSugar'
-pod 'SVProgressHUD'
-pod 'AFNetworking'
+pod 'ObjectiveSugar', '~> 1.1.0'
+pod 'SVProgressHUD', '~> 1.0'
+pod 'AFNetworking', '~> 2.1.1'
