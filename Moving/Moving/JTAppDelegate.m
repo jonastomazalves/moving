@@ -7,6 +7,7 @@
 //
 
 #import "JTAppDelegate.h"
+#import <Parse/Parse.h>
 
 @implementation JTAppDelegate
 
@@ -15,6 +16,9 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
+    
+    [self setupParseWithOptions:launchOptions];
+    
     [self.window makeKeyAndVisible];
     return YES;
 }
@@ -44,6 +48,13 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+#pragma mark - Parse.com Methods
+
+- (void)setupParseWithOptions:(NSDictionary *) launchOptions{
+    [Parse setApplicationId:kParseApplicationId clientKey:kParseClientKey];
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
 }
 
 @end
